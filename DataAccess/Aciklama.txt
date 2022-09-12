@@ -1,0 +1,11 @@
+﻿
+-----------------------------------------------------------------------------------
+1. Entities katmanındaki sınıfların Veritabanında hangi özelliklere sahip olarak oluşacağını yönettiğimiz katmandır.
+Örn: Sınıf içerisinde String Property'sinin SQL tarafına Nvarchar(50) gitmesi gerektiğini belirttiğimiz katmandır. MAPPING İşlemlerinin yapıldığı katmandır.
+-----------------------------------------------------------------------------------
+2. Veritanında EKLE-SİL-GÜNCELLE-LİSTELEME işlemlerini yöneten Sınıf bu katman üzerinde tasarlanır ve işlemler yaptırılır.
+--------------------------------------------------------------------------------------
+3. Toplu veya Tekli EKLE-SİL-GÜNCELLEME işlemlerinde, işlemlerinin doğruluğunu kontrol etmek için Bu katman bir Sınıf Yapısı tanımlanır ve işlemler'e göre response döndürülür.
+(Transaction Mekanizmasını aktif hale alıp hatalı ve hatasız işlemleri yöneten sınıf bu katmanda oluşturulur.)
+-------------------------------------------------------------------------------
+ NOT : Yani Bütün Veritabanıyla ilgili işlemler bu katmanda yapılır.

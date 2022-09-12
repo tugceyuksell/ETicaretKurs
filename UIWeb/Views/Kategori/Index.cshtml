@@ -1,0 +1,14 @@
+﻿
+<div class="co-md-12" style="padding:25px;text-align:center;font-size:25px;font-weight:bold">@Model.Name</div> @*Kategori Adı*@
+
+@foreach (var item in Model.Products)
+{
+    <div class="col-md-3" style="margin-bottom:15px;">
+        <div class="col-md-12" style="border:solid 0.3mm #e9e9e9;padding-top:15px;padding-bottom:15px">
+            <img src="/images/@item.MainImage" width="100%" style="margin-bottom:10px;" />
+            <div style="padding:10px;text-align:center;font-weight:bold">@item.Name</div>
+            <div style="padding:10px;text-align:center;font-weight:bold">@item.Price.ToString("C")</div>
+            <div class="col-md-12" style="text-align:center"> <a href="/urun/detay/@item.Id" class="btn btn-primary">Detay</a></div>
+        </div>
+    </div>
+}

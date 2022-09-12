@@ -1,0 +1,8 @@
+﻿
+-----------------------------------------------------------------------------------
+1. Metot veya Class Kısıtlamalarının yönetildiği Katmandır.
+-----------------------------------------------------------------------------------
+2. Aspect Oriented Programming ( Cephe Yönelimli Programlama)
+Cache,Log,Exception,Performans Yönetimlerini Tek Bir yerden yönetmemizi sağlayan bir yaklaşımdır. Bu Yaklaşım Bu katman içerisinde yapılır. (ReShaper)
+---------------------------------------------------------------------------------------
+

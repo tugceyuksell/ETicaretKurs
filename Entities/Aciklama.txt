@@ -1,0 +1,5 @@
+﻿
+-------------------------------------------------------------------------------------
+Veritabanındaki tabloların Yazılım dillerinde karşılığı olan NESNE(SINIF)'lerimizi oluşturup yönettiğimiz proje yapısıdır.
+Tablolar ile aynı isimdeki Sınıflarımızı ve o sınıfların içerisinde tablolardaki sütunların karşılığı olan property'leri oluşturup yönettiğimiz proje yapısıdır.
+------------------------------------------------------------------------------------

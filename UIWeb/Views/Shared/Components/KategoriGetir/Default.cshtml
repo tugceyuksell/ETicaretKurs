@@ -1,0 +1,7 @@
+﻿@foreach (var item in Model)
+{
+    @if (item.Status)
+    {
+        <li><a href="/Kategori/@item.Id">@item.Name</a></li>
+    }
+}

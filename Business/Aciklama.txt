@@ -1,0 +1,7 @@
+﻿
+-----------------------------------------------------------------------------------
+1. Kullanıcıdan gelen Nesnelerin(Object) içerisindeki Data'ların kurala uygun olarak doldurulup doldurulmadığını konrtol eden sınıflarımızı oluşturduğumuz proje yapısıdır(FluentValidation)
+--------------------------------------------------------------------------------------
+2. DataAcces ile UIWEB arasında veri transferinden sorumlu katmandır.
+--------------------------------------------------------------------------------------
+3. Sınıf Türetmeleri Bu Sınıf içerisinde Gerçekleştirilir.(Dependency Injection)

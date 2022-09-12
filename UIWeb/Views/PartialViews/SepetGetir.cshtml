@@ -1,0 +1,61 @@
+﻿@{ decimal Toplam = 0;}
+@if (Model.Count != 0)
+{
+    <div class="col-md-9">
+        <div class="col-md-12" style="background-color:#f3f3f3;margin-bottom:15px;padding:15px;">SEPETİM</div>
+        <table class="table talbe-bordered">
+            <thead>
+                <tr>
+                    <td>#</td>
+                    <td>Resim</td>
+                    <td>Ürün</td>
+                    <td>Adet</td>
+                    <td>Birim Fiyat</td>
+                    <td>İşlem</td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    Toplam += item.Piece * item.Price;
+                    <tr>
+                        <td style="vertical-align:middle">@item.Id</td>
+                        <td><img src="/images/@item.MainImages" width="50" /></td>
+                        <td style="vertical-align:middle">@item.Name</td>
+                        <td style="vertical-align:middle">
+                            <button class="btn btn-primary" style="margin-right:10px;" onclick="JsSepetAdet(@item.Id,false)">-</button>
+                            @item.Piece
+                            <button class="btn btn-primary" style="margin-left:10px;" onclick="JsSepetAdet(@item.Id,true)">+</button>
+                        </td>
+                        <td style="vertical-align:middle">@item.Price.ToString("N") TL</td>
+
+                        <td style="vertical-align:middle"><button class="btn btn-danger" onclick="JsSepetDelete(@item.Id)">Sil</button></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <div class="col-md-3">
+        <div class="col-md-12" style="background-color: #f3f3f3; margin-bottom: 15px; padding: 15px;text-align:center">TOPLAM</div>
+        <table class="table talbe-bordered">
+            <tr>
+                <td>Ara Fiyat : </td>
+                <td>@Toplam.ToString("N") TL</td>
+            </tr>
+            <tr>
+                <td>KDV(%18) : </td>
+                <td>@Html.Raw((Toplam * 0.18M).ToString("N") + "TL")</td>
+            </tr>
+            <tr>
+                <td>Toplam Fiyat : </td>
+                <td>@Html.Raw((Toplam * 1.18M).ToString("N") + "TL")</td>
+            </tr>
+            <tr><td colspan="2"><a href="/" class="btn btn-primary" style="width:100%;">Alışverişe Devam Et</a></td></tr>
+            <tr><td colspan="2"><a href="/Odeme" class="btn btn-danger" style="width:100%;">Ödeme Yap</a></td></tr>
+        </table>
+    </div>
+}
+else
+{
+    <div class="col-md-12" style="text-align:center;font-size:25px;">ALIŞVERİŞ SEPETİNİZ BOŞ.. <br /><br /> <a href="/" class="btn btn-primary" style="width:100%;">Alışverişe Devam Et</a></div>
+}

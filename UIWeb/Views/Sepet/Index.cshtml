@@ -1,0 +1,40 @@
+﻿
+<div  id="SepetDiv"></div>
+<div class="col-md-12"><div class="alert alert-success" style="display:none;" id="Olumlu"></div></div>
+
+<script>
+    $(document).ready(function () {
+        $("#SepetDiv").load("/Sepet/SepetGetir");
+    });
+
+    function JsSepetAdet(id, islem) {
+        $.ajax({
+            type: "POST",
+            url: "/JsonIslemleri/SepetUrunAdet",
+            data: { Id: id, islem: islem },
+            dataType: "json",
+            success: function (response) {
+                $("#SepetDiv").load("/Sepet/SepetGetir");
+                $("#AdetJS").load("/Sepet/SepetToplamAdet");
+                $("#Olumlu").show();
+                $("#Olumlu").html(response);
+            },
+            error: function (response) { }
+        });
+    };
+    function JsSepetDelete(id) {
+        $.ajax({
+            type: "POST",
+            url: "/JsonIslemleri/SepetUrunDelete",
+            data: { Id: id },
+            dataType: "json",
+            success: function (response) {
+                $("#SepetDiv").load("/Sepet/SepetGetir");
+                $("#AdetJS").load("/Sepet/SepetToplamAdet");
+                $("#Olumlu").show();
+                $("#Olumlu").html(response);
+            },
+            error: function (response) { }
+        });
+    };
+</script>
